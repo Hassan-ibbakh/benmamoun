@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="max-w-4xl mx-auto px-5 py-10 md:py-14">
+
+    <section class="text-center mb-12">
+        <span class="inline-block bg-forest-100 text-forest-700 text-xs font-bold px-4 py-1.5 rounded-full mb-4">قصتنا</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-forest-900 mb-3">من نحن</h2>
+        <p class="text-forest-600">قصتنا ورسالتنا في عالم الجمال والعافية</p>
+    </section>
+
+    <section class="bg-white rounded-2xl shadow-soft p-6 md:p-8 mb-8">
+        <h3 class="text-2xl font-extrabold mb-4 text-forest-800">رسالتنا في "بن المامون"</h3>
+        <p class="text-forest-700 leading-relaxed mb-4">
+            في "بن المامون"، نؤمن بأن الجمال الحقيقي يأتي من العناية الطبيعية والصحة الداخلية. هدفنا هو تزويدكم بأجود المنتجات الطبيعية والتجميلية، بالإضافة إلى خدمات الحجامة العلاجية بأعلى معايير النظافة والاحترافية.
+        </p>
+        <p class="text-forest-700 leading-relaxed">
+            بدأنا هذه المغامرة لتقديم بديل صحي وآمن للمنتجات الكيميائية، بالاعتماد على وصفات طبيعية أصيلة وممارسات طبية نبوية ثبتت فعاليتها عبر الزمن، لنكون الاسم الذي تثقون به للعناية بجمالكم وصحتكم.
+        </p>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+        <div class="bg-forest-50 p-6 rounded-2xl text-center">
+            <div class="text-4xl mb-4">🌿</div>
+            <h4 class="font-bold text-lg mb-2 text-forest-900">طبيعي 100%</h4>
+            <p class="text-sm text-forest-600">منتجات عضوية خالية من المواد الكيميائية الضارة.</p>
+        </div>
+        <div class="bg-clay-50 p-6 rounded-2xl text-center">
+            <div class="text-4xl mb-4">🩸</div>
+            <h4 class="font-bold text-lg mb-2 text-forest-900">احترافية طبية</h4>
+            <p class="text-sm text-forest-600">خدمات الحجامة تُجرى في بيئة نظيفة وآمنة تماماً.</p>
+        </div>
+        <div class="bg-forest-50 p-6 rounded-2xl text-center">
+            <div class="text-4xl mb-4">🤝</div>
+            <h4 class="font-bold text-lg mb-2 text-forest-900">ثقة العملاء</h4>
+            <p class="text-sm text-forest-600">رضاكم هو أولويتنا الأولى، نحن هنا لخدمتكم.</p>
+        </div>
+    </section>
+
+    <section class="text-center bg-forest-800 text-cream p-8 md:p-10 rounded-2xl">
+        <h3 class="text-2xl font-extrabold mb-3">هل أنت مستعد لتجربتنا؟</h3>
+        <p class="mb-6 text-forest-200">تواصل معنا اليوم لاكتشاف منتجاتنا أو حجز موعد للحجامة.</p>
+        <a href="/contact" class="inline-block bg-cream text-forest-800 px-8 py-3.5 rounded-full font-bold hover:bg-white transition">
+            تواصل معنا
+        </a>
+    </section>
+
+</main>
+{% endblock %}

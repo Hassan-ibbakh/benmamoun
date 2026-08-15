@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بن المامون - تجميل طبيعي وحجامة</title>
+    <meta name="description" content="بن المامون - منتجات تجميل طبيعية وخدمات حجامة علاجية">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { tajawal: ['Tajawal', 'sans-serif'] },
+                    colors: {
+                        forest:  { 50:'#F2F6F3', 100:'#E1EBE3', 200:'#C2D6C7', 300:'#93B69C', 400:'#5E9270', 500:'#3F7A5C', 600:'#2F5F46', 700:'#234837', 800:'#1B3A2C', 900:'#142B20' },
+                        clay:    { 50:'#FBF4EC', 100:'#F4E4D0', 300:'#E0B583', 400:'#CB9455', 500:'#B27B3F', 600:'#8F612F' },
+                        cream:   '#FAF7F0'
+                    },
+                    boxShadow: { soft: '0 4px 20px -4px rgba(20,43,32,0.08)' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Tajawal', sans-serif; }
+        .cup-motif { background: radial-gradient(circle at 30% 30%, rgba(63,122,92,0.12), transparent 60%); }
+    </style>
+</head>
+<body class="bg-cream text-forest-900 antialiased">
+
+    <!-- Header -->
+    <header class="bg-cream/90 backdrop-blur sticky top-0 z-40 border-b border-forest-100">
+        <nav class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2.5">
+                <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="بن المامون" class="h-10 w-auto">
+            </a>
+
+            <!-- Desktop nav -->
+            <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-forest-700">
+                <li><a href="/" class="hover:text-forest-500 transition">الرئيسية</a></li>
+                <li><a href="/cosmetiques" class="hover:text-forest-500 transition">المنتجات</a></li>
+                <li><a href="/hijama" class="hover:text-forest-500 transition">الحجامة</a></li>
+                <li><a href="/about" class="hover:text-forest-500 transition">من نحن</a></li>
+                <li><a href="/contact" class="hover:text-forest-500 transition">اتصل بنا</a></li>
+            </ul>
+
+            <a href="/contact" class="hidden md:inline-flex bg-forest-700 hover:bg-forest-800 text-cream text-sm font-bold px-5 py-2.5 rounded-full transition">
+                احجز موعدك
+            </a>
+
+            <!-- Mobile menu button -->
+            <button id="menuBtn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-forest-100 transition" aria-label="القائمة">
+                <svg id="menuIconOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-forest-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg id="menuIconClose" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-forest-800 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile nav panel -->
+        <div id="mobileMenu" class="md:hidden hidden border-t border-forest-100 bg-cream">
+            <ul class="flex flex-col px-5 py-3 text-forest-700 font-medium">
+                <li><a href="/" class="block py-3 border-b border-forest-100">الرئيسية</a></li>
+                <li><a href="/cosmetiques" class="block py-3 border-b border-forest-100">المنتجات</a></li>
+                <li><a href="/hijama" class="block py-3 border-b border-forest-100">الحجامة</a></li>
+                <li><a href="/about" class="block py-3 border-b border-forest-100">من نحن</a></li>
+                <li><a href="/contact" class="block py-3">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Contenu spécifique à chaque page -->
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+    <footer class="bg-forest-800 text-forest-100 mt-16">
+        <div class="max-w-6xl mx-auto px-5 py-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+            <div>
+                <div class="flex items-center gap-2.5 mb-3">
+                    <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="بن المامون" class="h-9 w-auto bg-cream rounded-lg p-1">
+                </div>
+                <p class="text-forest-200 leading-relaxed">منتجات طبيعية وخدمات حجامة علاجية، بثقة وجودة منذ البداية.</p>
+            </div>
+            <div>
+                <h5 class="text-cream font-bold mb-3">روابط</h5>
+                <ul class="space-y-2 text-forest-200">
+                    <li><a href="/cosmetiques" class="hover:text-cream transition">المنتجات</a></li>
+                    <li><a href="/hijama" class="hover:text-cream transition">الحجامة</a></li>
+                    <li><a href="/about" class="hover:text-cream transition">من نحن</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-cream font-bold mb-3">تواصل معنا</h5>
+                <p class="text-forest-200" dir="ltr">+212 6 08 63 55 39</p>
+                <p class="text-forest-200">من الإثنين إلى السبت: 9:00 - 18:00</p>
+            </div>
+        </div>
+        <div class="border-t border-forest-700 py-4 text-center text-xs text-forest-300">
+            © 2026 بن المامون. جميع الحقوق محفوظة.
+        </div>
+    </footer>
+
+    <!-- Bouton WhatsApp flottant -->
+    <a href="https://wa.me/212608635539" target="_blank" class="fixed bottom-6 left-6 bg-forest-600 hover:bg-forest-700 text-white p-4 rounded-full shadow-soft transition z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.61-1.687-3.157-1.687-4.948 0-4.97 4.03-9 9-9 4.97 0 9 4.03 9 9s-4.03 9-9 9c-1.665 0-3.207-.45-4.54-1.235l-6.46 1.346zm5.104-11.19c.094.144.197.288.31.432.345.413.77.806 1.27 1.18.476.354.97.666 1.484.936.494.26.98.434 1.464.534.492.1.97.16 1.434.18.466.02.92-.02 1.36-.12.44-.1.85-.24 1.23-.42.38-.18.73-.4 1.05-.66.32-.26.6-.54.84-.84.24-.3.44-.62.6-.96.16-.34.28-.68.36-1.04.08-.36.12-.72.12-1.08 0-.36-.04-.72-.12-1.08-.08-.36-.2-.7-.36-1.04-.16-.34-.36-.66-.6-.96-.24-.3-.52-.58-.84-.84-.32-.26-.67-.48-1.05-.66-.38-.18-.79-.32-1.23-.42-.44-.1-.894-.14-1.36-.12-.464.02-.942.08-1.434.18-.484.1-.97.274-1.464.534-.514.27-1.008.582-1.484.936-.5.374-.925.767-1.27 1.18-.113.144-.216.288-.31.432z"/></svg>
+    </a>
+
+    <!-- Fenêtre pop-up (Modal) pour le formulaire de commande -->
+    <div id="orderModal" class="fixed inset-0 bg-forest-900/50 backdrop-blur-sm hidden items-center justify-center z-50 px-4">
+        <div class="bg-cream rounded-2xl p-6 w-full max-w-md max-h-[90vh] overflow-y-auto shadow-soft">
+            <div class="flex justify-between items-center mb-5">
+                <h3 class="text-xl font-extrabold text-forest-800">إتمام الطلب</h3>
+                <button onclick="closeOrderModal()" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-forest-100 text-forest-600 text-xl transition">&times;</button>
+            </div>
+            <form id="orderForm" class="space-y-4">
+                <input type="hidden" id="produit" name="produit">
+                <div>
+                    <label class="block text-sm font-medium mb-1 text-forest-700">الاسم الكامل</label>
+                    <input type="text" name="nom" required class="w-full border border-forest-200 rounded-lg p-3 focus:ring-2 focus:ring-forest-400 focus:border-forest-400 outline-none transition">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1 text-forest-700">رقم الهاتف</label>
+                    <input type="tel" name="telephone" required class="w-full border border-forest-200 rounded-lg p-3 focus:ring-2 focus:ring-forest-400 focus:border-forest-400 outline-none transition">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1 text-forest-700">الكمية</label>
+                    <input type="number" name="quantite" value="1" min="1" required class="w-full border border-forest-200 rounded-lg p-3 focus:ring-2 focus:ring-forest-400 focus:border-forest-400 outline-none transition">
+                </div>
+                <div id="orderStatus" class="text-forest-600 text-sm hidden"></div>
+                <button type="submit" class="w-full bg-forest-700 hover:bg-forest-800 text-cream py-3 rounded-lg font-bold transition">تأكيد والطلب عبر واتساب</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Menu mobile
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const iconOpen = document.getElementById('menuIconOpen');
+        const iconClose = document.getElementById('menuIconClose');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            iconOpen.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
+        });
+
+        // Modale de commande
+        function openOrderModal(nom) {
+            document.getElementById('produit').value = nom;
+            document.getElementById('orderModal').classList.remove('hidden');
+            document.getElementById('orderModal').classList.add('flex');
+        }
+        function closeOrderModal() {
+            document.getElementById('orderModal').classList.add('hidden');
+            document.getElementById('orderModal').classList.remove('flex');
+        }
+
+        document.getElementById('orderForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const response = await fetch('/commander', { method: 'POST', body: formData });
+            const result = await response.json();
+
+            if (result.statut === 'succes') {
+                const nom = formData.get('nom');
+                const tel = formData.get('telephone');
+                const quantite = formData.get('quantite');
+                const produit = formData.get('produit');
+
+                const msg = `مرحبا، أنا ${nom}.%0aأريد طلب: ${quantite} × ${produit}.%0aرقم هاتفي: ${tel}`;
+                const waLink = `https://wa.me/212608635539?text=${msg}`;
+
+                window.open(waLink, '_blank');
+                closeOrderModal();
+                this.reset();
+            }
+        });
+    </script>
+
+</body>
+</html>

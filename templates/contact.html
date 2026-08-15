@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="max-w-2xl mx-auto px-5 py-10 md:py-14">
+
+    <section class="text-center mb-10">
+        <span class="inline-block bg-forest-100 text-forest-700 text-xs font-bold px-4 py-1.5 rounded-full mb-4">نحن هنا من أجلك</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-forest-900">معلومات الاتصال</h2>
+    </section>
+
+    <div class="space-y-4">
+        <div class="bg-white p-6 rounded-2xl shadow-soft flex items-center justify-between">
+            <div>
+                <h4 class="font-bold text-lg text-forest-900">رقم الهاتف / واتساب</h4>
+                <p class="text-forest-600" dir="ltr">+212 6 08 63 55 39</p>
+            </div>
+            <span class="w-12 h-12 rounded-full bg-forest-100 flex items-center justify-center text-2xl">📱</span>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-soft flex items-center justify-between">
+            <div>
+                <h4 class="font-bold text-lg text-forest-900">العنوان</h4>
+                <p class="text-forest-600">الشارع الرئيسي، المدينة، المغرب</p>
+            </div>
+            <span class="w-12 h-12 rounded-full bg-clay-50 flex items-center justify-center text-2xl">📍</span>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-soft flex items-center justify-between">
+            <div>
+                <h4 class="font-bold text-lg text-forest-900">ساعات العمل</h4>
+                <p class="text-forest-600">من الإثنين إلى السبت: 9:00 - 18:00</p>
+            </div>
+            <span class="w-12 h-12 rounded-full bg-forest-100 flex items-center justify-center text-2xl">🕒</span>
+        </div>
+    </div>
+
+    <div class="text-center mt-10">
+        <a href="https://wa.me/212608635539" target="_blank" class="inline-block bg-forest-700 hover:bg-forest-800 text-cream px-8 py-3.5 rounded-full font-bold transition">
+            راسلنا عبر واتساب
+        </a>
+    </div>
+
+</main>
+{% endblock %}

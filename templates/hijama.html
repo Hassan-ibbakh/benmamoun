@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="max-w-4xl mx-auto px-5 py-10 md:py-14">
+
+    <!-- Hero page -->
+    <section class="relative text-center mb-12 md:mb-16">
+        <div class="relative h-40 md:h-52 flex items-center justify-center mb-6">
+            <div class="absolute w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-forest-300"></div>
+            <div class="absolute w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-clay-300 translate-x-8 -translate-y-4"></div>
+        </div>
+        <span class="inline-block bg-clay-50 text-clay-600 text-xs font-bold px-4 py-1.5 rounded-full mb-4">سنة نبوية وعلاج طبيعي</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-forest-900 mb-3">خدمات الحجامة</h2>
+        <p class="text-forest-600 max-w-md mx-auto leading-relaxed">علاج طبيعي فعال لتنشيط الدورة الدموية وإزالة السموم من الجسم، بأعلى معايير النظافة والاحترافية.</p>
+    </section>
+
+    <!-- Bienfaits -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-12">
+        <div class="bg-white rounded-2xl p-6 shadow-soft flex items-start gap-4">
+            <span class="w-12 h-12 shrink-0 rounded-full bg-forest-100 flex items-center justify-center">
+                <svg class="w-6 h-6 text-forest-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <path d="M12 21a7 7 0 007-7c0-4-4-8-7-12-3 4-7 8-7 12a7 7 0 007 7z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+            <div>
+                <h4 class="font-bold text-forest-900 mb-1">تنشيط الدورة الدموية</h4>
+                <p class="text-sm text-forest-600">تحسين تدفق الدم وتخفيف الآلام المزمنة.</p>
+            </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-soft flex items-start gap-4">
+            <span class="w-12 h-12 shrink-0 rounded-full bg-clay-50 flex items-center justify-center">
+                <svg class="w-6 h-6 text-clay-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <circle cx="12" cy="12" r="9" stroke-linecap="round"/>
+                    <path d="M9 12h6M12 9v6" stroke-linecap="round"/>
+                </svg>
+            </span>
+            <div>
+                <h4 class="font-bold text-forest-900 mb-1">الاسترخاء والتخلص من التوتر</h4>
+                <p class="text-sm text-forest-600">علاج الصداع والتعب المستمر بشكل طبيعي.</p>
+            </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-soft flex items-start gap-4">
+            <span class="w-12 h-12 shrink-0 rounded-full bg-forest-100 flex items-center justify-center">
+                <svg class="w-6 h-6 text-forest-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <path d="M4 12c2-4 5-6 8-6s6 2 8 6c-2 4-5 6-8 6s-6-2-8-6z" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="12" cy="12" r="2.2"/>
+                </svg>
+            </span>
+            <div>
+                <h4 class="font-bold text-forest-900 mb-1">إزالة السموم</h4>
+                <p class="text-sm text-forest-600">تخليص الجسم من السموم المتراكمة.</p>
+            </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-soft flex items-start gap-4">
+            <span class="w-12 h-12 shrink-0 rounded-full bg-clay-50 flex items-center justify-center">
+                <svg class="w-6 h-6 text-clay-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="12" cy="12" r="9"/>
+                </svg>
+            </span>
+            <div>
+                <h4 class="font-bold text-forest-900 mb-1">بيئة نظيفة وآمنة</h4>
+                <p class="text-sm text-forest-600">أدوات معقّمة ومعايير صحية صارمة.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulaire de réservation -->
+    <section id="reservation" class="bg-white rounded-2xl shadow-soft p-6 md:p-10">
+        <div class="text-center mb-8">
+            <h3 class="text-2xl md:text-3xl font-extrabold text-forest-900 mb-2">احجز موعدك</h3>
+            <p class="text-forest-600">املأ المعلومات أدناه، سنؤكد موعدك عبر واتساب مباشرة.</p>
+        </div>
+
+        <form id="reservationForm" class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-2xl mx-auto">
+            <div>
+                <label class="block text-sm font-medium mb-1 text-forest-700">الاسم الكامل</label>
+                <input type="text" name="nom" required
+                       class="w-full border border-forest-200 rounded-lg p-3 focus:ring-2 focus:ring-forest-400 focus:border-forest-400 outline-none transition">
+            </div>
+            <div>
+                <label class="block text-sm font-medium mb-1 text-forest-700">رقم الهاتف</label>
+                <input type="tel" name="telephone" required
+                       class="w-full border border-forest-200 rounded-lg p-3 focus:ring-2 focus:ring-forest-400 focus:border-forest-400 outline-none transition">
+            </div>
+            <div>
+                <label class="block text-sm font-medium mb-1 text-forest-700">التاريخ المفضل</label>
+                <input type="date" name="date" required
+                       class="w-full border border-forest-200 rounded-lg p-3 focus:ring-2 focus:ring-forest-400 focus:border-forest-400 outline-none transition">
+            </div>
+            <div>
+                <label class="block text-sm font-medium mb-1 text-forest-700">الفترة المفضلة</label>
+                <select name="periode" required
+                        class="w-full border border-forest-200 rounded-lg p-3 focus:ring-2 focus:ring-forest-400 focus:border-forest-400 outline-none transition bg-white">
+                    <option value="">اختاري الفترة</option>
+                    <option value="صباحاً (9:00 - 12:00)">صباحاً (9:00 - 12:00)</option>
+                    <option value="بعد الظهر (12:00 - 16:00)">بعد الظهر (12:00 - 16:00)</option>
+                    <option value="مساءً (16:00 - 18:00)">مساءً (16:00 - 18:00)</option>
+                </select>
+            </div>
+            <div class="md:col-span-2">
+                <label class="block text-sm font-medium mb-1 text-forest-700">ملاحظات (اختياري)</label>
+                <textarea name="notes" rows="3"
+                          class="w-full border border-forest-200 rounded-lg p-3 focus:ring-2 focus:ring-forest-400 focus:border-forest-400 outline-none transition resize-none"
+                          placeholder="مثال: أول مرة أقوم بالحجامة، أو أي ملاحظة صحية تودين إخبارنا بها"></textarea>
+            </div>
+
+            <div id="reservationStatus" class="md:col-span-2 text-sm text-forest-600 hidden"></div>
+
+            <div class="md:col-span-2">
+                <button type="submit" class="w-full bg-forest-700 hover:bg-forest-800 text-cream py-3.5 rounded-lg font-bold transition">
+                    تأكيد الحجز عبر واتساب
+                </button>
+            </div>
+        </form>
+    </section>
+
+</main>
+
+<script>
+    document.getElementById('reservationForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const statusEl = document.getElementById('reservationStatus');
+
+        try {
+            const response = await fetch('/reserver', { method: 'POST', body: formData });
+            const result = await response.json();
+
+            if (result.statut === 'succes') {
+                const nom = formData.get('nom');
+                const tel = formData.get('telephone');
+                const date = formData.get('date');
+                const periode = formData.get('periode');
+                const notes = formData.get('notes');
+
+                let msg = `مرحبا، أنا ${nom}.%0aأريد حجز موعد للحجامة.%0aالتاريخ: ${date}%0aالفترة: ${periode}%0aرقم هاتفي: ${tel}`;
+                if (notes) msg += `%0aملاحظات: ${notes}`;
+
+                const waLink = `https://wa.me/212608635539?text=${msg}`;
+                window.open(waLink, '_blank');
+                this.reset();
+            } else {
+                statusEl.textContent = 'حدث خطأ، حاولي مرة أخرى.';
+                statusEl.classList.remove('hidden');
+            }
+        } catch (err) {
+            statusEl.textContent = 'تعذر إرسال الطلب، تحققي من الاتصال بالإنترنت.';
+            statusEl.classList.remove('hidden');
+        }
+    });
+</script>
+{% endblock %}
