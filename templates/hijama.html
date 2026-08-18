@@ -3,7 +3,7 @@
 {% block content %}
 <main class="max-w-6xl mx-auto px-5 py-10 md:py-14">
 
-    <!-- Hero page -->
+    <!-- Hero -->
     <section class="relative text-center mb-8">
         <div class="relative h-40 md:h-52 flex items-center justify-center mb-6">
             <div class="absolute w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-forest-300"></div>
@@ -23,30 +23,62 @@
     <!-- Grille des services -->
     <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
 
-        <!-- Service 1 : العلاج بالحجامة -->
+        <!-- 1 : الحجامة الجافة -->
         <div class="bg-white rounded-2xl shadow-soft overflow-hidden flex flex-col">
-            <img src="{{ url_for('static', filename='images/services/hijama.png') }}" alt="العلاج بالحجامة"
+            <img src="{{ url_for('static', filename='images/services/hijama-jafa.jpeg') }}" alt="الحجامة الجافة"
                  width="400" height="176" loading="eager" fetchpriority="high" decoding="async"
                  class="w-full h-44 object-cover bg-forest-100">
             <div class="p-5 flex flex-col flex-1">
-                <h4 class="font-bold text-lg text-forest-900 mb-1">العلاج بالحجامة</h4>
-                <p class="text-sm text-forest-600 mb-4 flex-1">حجامة طبية لتنشيط الدورة الدموية وتخفيف الآلام المزمنة، للظهر، الرجلين أو الرأس.</p>
+                <h4 class="font-bold text-lg text-forest-900 mb-1">الحجامة الجافة</h4>
+                <p class="text-sm text-forest-600 mb-4 flex-1">تنشيط الدورة الدموية وتخفيف آلام العضلات والتشنجات دون تشريط — مثالية للمبتدئين أو كتمهيد للحجامة الرطبة.</p>
                 <div class="flex items-center justify-between">
-                    <span class="text-forest-700 font-extrabold text-sm">من 100 درهم</span>
-                    <button onclick="openServiceModal('hijama')" class="text-forest-600 hover:text-forest-800 text-sm font-bold transition">التفاصيل ←</button>
+                    <span class="text-forest-700 font-extrabold text-sm">100 درهم</span>
+                    <button onclick="openServiceModal('dry')" class="text-forest-600 hover:text-forest-800 text-sm font-bold transition">التفاصيل ←</button>
                 </div>
-                <button onclick="bookService('العلاج بالحجامة')" class="mt-3 w-full bg-forest-700 hover:bg-forest-800 text-cream py-2.5 rounded-full text-sm font-bold transition">احجز عبر واتساب</button>
+                <button onclick="bookService('الحجامة الجافة')" class="mt-3 w-full bg-forest-700 hover:bg-forest-800 text-cream py-2.5 rounded-full text-sm font-bold transition">احجز عبر واتساب</button>
             </div>
         </div>
 
-        <!-- Service 2 : الفوطة النارية -->
+        <!-- 2 : حجامة الظهر -->
         <div class="bg-white rounded-2xl shadow-soft overflow-hidden flex flex-col">
-            <img src="{{ url_for('static', filename='images/services/hijama.png') }}" alt="الفوطة النارية"
+            <img src="{{ url_for('static', filename='images/services/hijama.png') }}" alt="حجامة الظهر"
+                 width="400" height="176" loading="lazy" decoding="async"
+                 class="w-full h-44 object-cover bg-forest-100">
+            <div class="p-5 flex flex-col flex-1">
+                <h4 class="font-bold text-lg text-forest-900 mb-1">حجامة الظهر</h4>
+                <p class="text-sm text-forest-600 mb-4 flex-1">علاج فعّال لآلام الظهر المزمنة، الشدّ العضلي، عرق النسا وضغط الأعصاب — مع تنشيط الدورة الدموية وإزالة التوتر العميق.</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-forest-700 font-extrabold text-sm">من 100 درهم</span>
+                    <button onclick="openServiceModal('back')" class="text-forest-600 hover:text-forest-800 text-sm font-bold transition">التفاصيل ←</button>
+                </div>
+                <button onclick="bookService('حجامة الظهر')" class="mt-3 w-full bg-forest-700 hover:bg-forest-800 text-cream py-2.5 rounded-full text-sm font-bold transition">احجز عبر واتساب</button>
+            </div>
+        </div>
+
+        <!-- 3 : حجامة الرجلين -->
+        <div class="bg-white rounded-2xl shadow-soft overflow-hidden flex flex-col">
+            <img src="{{ url_for('static', filename='images/services/rjlin.png') }}" alt="حجامة الرجلين"
+                 width="400" height="176" loading="lazy" decoding="async"
+                 class="w-full h-44 object-cover bg-forest-100">
+            <div class="p-5 flex flex-col flex-1">
+                <h4 class="font-bold text-lg text-forest-900 mb-1">حجامة الرجلين</h4>
+                <p class="text-sm text-forest-600 mb-4 flex-1">تخفيف آلام الركب والمفاصل، ثقل الرجلين وعرق النسا — تنشيط الدورة الدموية وتحسين مرونة المفاصل والتخفيف من أعراض الدوالي.</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-forest-700 font-extrabold text-sm">من 100 درهم</span>
+                    <button onclick="openServiceModal('legs')" class="text-forest-600 hover:text-forest-800 text-sm font-bold transition">التفاصيل ←</button>
+                </div>
+                <button onclick="bookService('حجامة الرجلين')" class="mt-3 w-full bg-forest-700 hover:bg-forest-800 text-cream py-2.5 rounded-full text-sm font-bold transition">احجز عبر واتساب</button>
+            </div>
+        </div>
+
+        <!-- 4 : الفوطة النارية -->
+        <div class="bg-white rounded-2xl shadow-soft overflow-hidden flex flex-col">
+            <img src="{{ url_for('static', filename='images/services/fota-nariya.jpeg') }}" alt="الفوطة النارية"
                  width="400" height="176" loading="lazy" decoding="async"
                  class="w-full h-44 object-cover bg-forest-100">
             <div class="p-5 flex flex-col flex-1">
                 <h4 class="font-bold text-lg text-forest-900 mb-1">الفوطة النارية</h4>
-                <p class="text-sm text-forest-600 mb-4 flex-1">تقنية علاجية تقليدية تجمع بين الحرارة والتدليك لإرخاء العضلات وتنشيط الجسم.</p>
+                <p class="text-sm text-forest-600 mb-4 flex-1">تدفئة عميقة للجسم لإرخاء العضلات المشدودة وطرد البرودة والرطوبة — تُستعمل غالبًا قبل الحجامة لتعزيز فعاليتها.</p>
                 <div class="flex items-center justify-between">
                     <span class="text-forest-700 font-extrabold text-sm">من 100 درهم</span>
                     <button onclick="openServiceModal('foutta')" class="text-forest-600 hover:text-forest-800 text-sm font-bold transition">التفاصيل ←</button>
@@ -55,14 +87,14 @@
             </div>
         </div>
 
-        <!-- Service 3 : تقنية الموكسا الصينية -->
+        <!-- 5 : تقنية الموكسا الصينية -->
         <div class="bg-white rounded-2xl shadow-soft overflow-hidden flex flex-col">
-            <img src="{{ url_for('static', filename='images/services/hijama.png') }}" alt="تقنية الموكسا الصينية"
+            <img src="{{ url_for('static', filename='images/services/mouksa.jpeg') }}" alt="تقنية الموكسا الصينية"
                  width="400" height="176" loading="lazy" decoding="async"
                  class="w-full h-44 object-cover bg-forest-100">
             <div class="p-5 flex flex-col flex-1">
                 <h4 class="font-bold text-lg text-forest-900 mb-1">تقنية الموكسا الصينية</h4>
-                <p class="text-sm text-forest-600 mb-4 flex-1">علاج صيني تقليدي يعتمد على الحرارة الموجهة لتحفيز نقاط معينة في الجسم.</p>
+                <p class="text-sm text-forest-600 mb-4 flex-1">مستخلصة من نبات الشيح، تعمل بالحرارة الموجهة على تنشيط الطاقة وتخفيف الآلام المزمنة ودعم الخصوبة وتقوية المناعة.</p>
                 <div class="flex items-center justify-between">
                     <span class="text-forest-700 font-extrabold text-sm">من 100 درهم</span>
                     <button onclick="openServiceModal('moxa')" class="text-forest-600 hover:text-forest-800 text-sm font-bold transition">التفاصيل ←</button>
@@ -71,9 +103,25 @@
             </div>
         </div>
 
-        <!-- Service 4 : شمع الأذن -->
+        <!-- 6 : الوخز بالإبر الصينية -->
         <div class="bg-white rounded-2xl shadow-soft overflow-hidden flex flex-col">
-            <img src="{{ url_for('static', filename='images/services/hijama.png') }}" alt="شمع الأذن الهوبي"
+            <img src="{{ url_for('static', filename='images/services/ibar.jpeg') }}" alt="الوخز بالإبر الصينية"
+                 width="400" height="176" loading="lazy" decoding="async"
+                 class="w-full h-44 object-cover bg-forest-100">
+            <div class="p-5 flex flex-col flex-1">
+                <h4 class="font-bold text-lg text-forest-900 mb-1">الوخز بالإبر الصينية</h4>
+                <p class="text-sm text-forest-600 mb-4 flex-1">يحفّز نقاط الطاقة في الجسم لتخفيف الآلام، علاج القلق والأرق، دعم الهضم والخصوبة وتنظيم الهرمونات.</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-forest-700 font-extrabold text-sm">حسب الحالة</span>
+                    <button onclick="openServiceModal('acupuncture')" class="text-forest-600 hover:text-forest-800 text-sm font-bold transition">التفاصيل ←</button>
+                </div>
+                <button onclick="bookService('الوخز بالإبر الصينية')" class="mt-3 w-full bg-forest-700 hover:bg-forest-800 text-cream py-2.5 rounded-full text-sm font-bold transition">احجز عبر واتساب</button>
+            </div>
+        </div>
+
+        <!-- 7 : شمع الأذن -->
+        <div class="bg-white rounded-2xl shadow-soft overflow-hidden flex flex-col">
+            <img src="{{ url_for('static', filename='images/services/hobi.png') }}" alt="شمع الأذن الهوبي"
                  width="400" height="176" loading="lazy" decoding="async"
                  class="w-full h-44 object-cover bg-forest-100">
             <div class="p-5 flex flex-col flex-1">
@@ -87,10 +135,10 @@
             </div>
         </div>
 
-        <!-- Service 5 : العرض الخاص بمنطقة الظهر -->
-        <div class="bg-white rounded-2xl shadow-soft overflow-hidden flex flex-col relative sm:col-span-2 lg:col-span-1">
+        <!-- 8 : عرض خاص بمنطقة الظهر -->
+        <div class="bg-white rounded-2xl shadow-soft overflow-hidden flex flex-col relative sm:col-span-2 lg:col-span-2">
             <span class="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10">عرض خاص</span>
-            <img src="{{ url_for('static', filename='images/services/back-offer.png') }}" alt="عرض خاص بمنطقة الظهر"
+            <img src="{{ url_for('static', filename='images/services/hijama.png') }}" alt="عرض خاص بمنطقة الظهر"
                  width="400" height="176" loading="lazy" decoding="async"
                  class="w-full h-44 object-cover bg-forest-100">
             <div class="p-5 flex flex-col flex-1">
@@ -106,11 +154,8 @@
 
     </section>
 
-    <p class="text-xs text-forest-500 text-center max-w-xl mx-auto mb-14">
-        تنبيه: حصص الوخز بالإبر الصينية تختلف حسب الحالة، ولا يمكن تحديد السعر قبل تشخيص الحالة على عين المكان.
-    </p>
 
-    <!-- Bienfaits -->
+    <!-- فوائد الحجامة -->
     <section class="mb-4">
         <h3 class="text-2xl font-extrabold text-forest-900 text-center mb-8">فوائد الحجامة</h3>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5">
@@ -149,7 +194,7 @@
 
 </main>
 
-<!-- Modal détails du service (réutilisable) -->
+<!-- Modal -->
 <div id="serviceModal" class="fixed inset-0 bg-forest-900/50 backdrop-blur-sm hidden items-center justify-center z-50 px-4">
     <div class="bg-cream rounded-2xl p-6 w-full max-w-md max-h-[85vh] overflow-y-auto shadow-soft">
         <div class="flex justify-between items-center mb-3">
@@ -157,95 +202,203 @@
             <button onclick="closeServiceModal()" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-forest-100 text-forest-600 text-xl transition">&times;</button>
         </div>
         <p id="modalDescription" class="text-sm text-forest-600 leading-relaxed mb-5"></p>
-        <ul id="modalList" class="space-y-2 mb-5"></ul>
+        <ul id="modalList" class="space-y-2 mb-3"></ul>
+        <div id="modalBenefitsSection" class="hidden mb-5">
+            <p class="text-xs font-bold text-forest-500 uppercase tracking-wide mb-2">الفوائد</p>
+            <ul id="modalBenefits" class="space-y-1.5"></ul>
+        </div>
         <button id="modalBookBtn" class="w-full bg-forest-700 hover:bg-forest-800 text-cream py-3 rounded-lg font-bold transition">احجز عبر واتساب</button>
     </div>
 </div>
 
 <script>
-    const SERVICES = {
-        hijama: {
-            title: "العلاج بالحجامة",
-            description: "حجامة طبية لتنشيط الدورة الدموية وتخفيف الآلام المزمنة، للظهر، الرجلين أو الرأس.",
-            waName: "العلاج بالحجامة",
-            items: [
-                ["تدليك وحجامة للظهر أو الرجلين", "100 درهم"],
-                ["تدليك وحجامة للقولون العصبي (بومزوي)", "100 درهم"],
-                ["حجامة الرأس (دون الحاجة لإزالة الشعر)", "100 درهم"],
-                ["تدليك وحجامة للظهر والرجلين معاً", "150 درهم"]
-            ]
-        },
-        foutta: {
-            title: "الفوطة النارية",
-            description: "تقنية علاجية تقليدية تجمع بين الحرارة والتدليك لإرخاء العضلات وتنشيط الجسم.",
-            waName: "الفوطة النارية",
-            items: [
-                ["تدليك وفوطة نارية للظهر", "100 درهم"],
-                ["تدليك وفوطة نارية للظهر والرجلين", "150 درهم"],
-                ["تدليك وفوطة نارية وحجامة للظهر", "150 درهم"],
-                ["تدليك وحجامة وفوطة نارية للظهر والرجلين", "200 درهم"]
-            ]
-        },
-        moxa: {
-            title: "تقنية الموكسا الصينية",
-            description: "علاج صيني تقليدي يعتمد على الحرارة الموجهة لتحفيز نقاط معينة في الجسم.",
-            waName: "تقنية الموكسا الصينية",
-            items: [
-                ["تدليك وموكسا للظهر", "100 درهم"],
-                ["تدليك وموكسا للظهر والرجلين", "150 درهم"],
-                ["تدليك وحجامة وموكسا للظهر", "150 درهم"],
-                ["تدليك وحجامة وموكسا للظهر والرجلين", "200 درهم"]
-            ]
-        },
-        ear: {
-            title: "شمع الأذن (الهوبي)",
-            description: "تقنية طبيعية لتنقية الأذنين وإزالة الشمع الزائد بلطف وأمان تام.",
-            waName: "شمع الأذن الهوبي",
-            items: [
-                ["تقنية شمع الهوبي لتنقية الأذنين", "80 درهم"]
-            ]
-        },
-        offer: {
-            title: "عرض خاص بمنطقة الظهر",
-            description: "تدليك يدوي أو آلي، حجامة جافة، أحجار بركانية وحجامة دموية — جميع خدمات الظهر بسعر واحد.",
-            waName: "العرض الخاص بمنطقة الظهر",
-            items: [
-                ["تدليك يدوي", "ضمن العرض"],
-                ["تدليك آلي", "ضمن العرض"],
-                ["حجامة جافة", "ضمن العرض"],
-                ["أحجار بركانية", "ضمن العرض"],
-                ["حجامة دموية", "ضمن العرض"],
-                ["السعر الإجمالي بدل 150 درهم", "100 درهم"]
-            ]
-        }
-    };
+const SERVICES = {
+    dry: {
+        title: "الحجامة الجافة",
+        description: "حجامة بدون تشريط لتنشيط الدورة الدموية وإرخاء العضلات — مناسبة للمبتدئين أو كتمهيد للحجامة الرطبة.",
+        waName: "الحجامة الجافة",
+        items: [
+            ["حجامة جافة للظهر أو الرجلين", "100 درهم"]
+        ],
+        benefits: [
+            "تنشيط الدورة الدموية",
+            "تخفيف آلام العضلات والمفاصل",
+            "إرخاء التشنجات العضلية",
+            "تقليل التوتر والإجهاد",
+            "تحسين مرونة الجلد والأنسجة",
+            "تحفيز الجهاز العصبي",
+            "دعم الاسترخاء والشعور بالراحة",
+            "مناسبة لمن لا يرغب في التشريط أو كتمهيد للحجامة الرطبة"
+        ]
+    },
+    back: {
+        title: "حجامة الظهر",
+        description: "علاج متخصص لآلام الظهر بأنواعها — من الشد العضلي إلى عرق النسا وضغط الأعصاب.",
+        waName: "حجامة الظهر",
+        items: [
+            ["تدليك وحجامة للظهر", "100 درهم"],
+            ["تدليك وحجامة للظهر والرجلين معاً", "150 درهم"]
+        ],
+        benefits: [
+            "آلام العضلات والمفاصل",
+            "الأبهر (الوثاب / شدّ أعلى الظهر)",
+            "عرق النسا (السياتيك)",
+            "آلام أسفل الظهر (Lombalgie)",
+            "تشنجات الظهر والإجهاد العضلي",
+            "تنشيط الدورة الدموية",
+            "التوتر والضغط العصبي",
+            "تخفيف آلام البرودة"
+        ]
+    },
+    legs: {
+        title: "حجامة الرجلين",
+        description: "علاج فعّال لآلام الركب والمفاصل، الثقل المزمن وأعراض الدوالي — مع تحسين الدورة الدموية ومرونة المفاصل.",
+        waName: "حجامة الرجلين",
+        items: [
+            ["تدليك وحجامة للرجلين", "100 درهم"],
+            ["تدليك وحجامة للظهر والرجلين معاً", "150 درهم"]
+        ],
+        benefits: [
+            "تخفيف آلام الركب والمفاصل",
+            "علاج ثقل الرجلين والتعب",
+            "تنشيط الدورة الدموية",
+            "التخفيف من عرق النسا (السياتيك)",
+            "تقليل انتفاخ الركب والساقين",
+            "التخفيف من تشنجات العضلات (الشد العضلي)",
+            "تحسين مرونة المفاصل",
+            "المساعدة في التخفيف من أعراض الدوالي"
+        ]
+    },
+    foutta: {
+        title: "الفوطة النارية",
+        description: "تقنية علاجية تقليدية تجمع بين الحرارة والتدليك لإرخاء العضلات وتنشيط الجسم.",
+        waName: "الفوطة النارية",
+        items: [
+            ["تدليك وفوطة نارية للظهر", "100 درهم"],
+            ["تدليك وفوطة نارية للظهر والرجلين", "150 درهم"],
+            ["تدليك وفوطة نارية وحجامة للظهر", "150 درهم"],
+            ["تدليك وحجامة وفوطة نارية للظهر والرجلين", "200 درهم"]
+        ],
+        benefits: [
+            "تدفئة عميقة للجسم",
+            "تخفيف آلام الظهر والمفاصل",
+            "إرخاء العضلات المشدودة",
+            "تنشيط الدورة الدموية",
+            "طرد البرودة والرطوبة",
+            "تهدئة الأعصاب وتقليل التوتر",
+            "تحسين الإحساس بالراحة والاسترخاء",
+            "تُستعمل غالبًا قبل الحجامة لتعزيز فعاليتها"
+        ]
+    },
+    moxa: {
+        title: "تقنية الموكسا الصينية",
+        description: "علاج صيني تقليدي مستخلص من نبات الشيح، يعتمد على الحرارة الموجهة لتحفيز نقاط الطاقة في الجسم.",
+        waName: "تقنية الموكسا الصينية",
+        items: [
+            ["تدليك وموكسا للظهر", "100 درهم"],
+            ["تدليك وموكسا للظهر والرجلين", "150 درهم"],
+            ["تدليك وحجامة وموكسا للظهر", "150 درهم"],
+            ["تدليك وحجامة وموكسا للظهر والرجلين", "200 درهم"]
+        ],
+        benefits: [
+            "تنشيط الدورة الدموية",
+            "تدفئة الجسم وطرد البرودة",
+            "تخفيف الآلام المزمنة (الظهر، المفاصل، البطن)",
+            "تقوية المناعة",
+            "تحسين الهضم",
+            "تخفيف التوتر والإجهاد",
+            "دعم الخصوبة وتنظيم الدورة الشهرية",
+            "تعزيز توازن الطاقة في الجسم"
+        ]
+    },
+    acupuncture: {
+        title: "الوخز بالإبر الصينية",
+        description: "يعتمد على تحفيز نقاط طاقية لإعادة توازن الجسم. السعر يُحدد بعد التشخيص حسب الحالة.",
+        waName: "الوخز بالإبر الصينية",
+        items: [
+            ["السعر يُحدد حسب الحالة بعد التشخيص", "على عين المكان"]
+        ],
+        benefits: [
+            "تخفيف الآلام (الظهر، الرقبة، المفاصل، الصداع)",
+            "علاج التوتر والقلق والأرق",
+            "تحسين الدورة الدموية",
+            "دعم علاج مشاكل الهضم",
+            "تنظيم الهرمونات والدورة الشهرية",
+            "دعم الخصوبة",
+            "تخفيف أعراض القولون العصبي",
+            "تقوية المناعة",
+            "المساعدة في علاج التنميل والتشنجات",
+            "يعتمد على تحفيز نقاط طاقية لإعادة توازن الجسم"
+        ]
+    },
+    ear: {
+        title: "شمع الأذن (الهوبي)",
+        description: "تقنية طبيعية لتنقية الأذنين وإزالة الشمع الزائد بلطف وأمان تام.",
+        waName: "شمع الأذن الهوبي",
+        items: [
+            ["تقنية شمع الهوبي لتنقية الأذنين", "80 درهم"]
+        ],
+        benefits: []
+    },
+    offer: {
+        title: "عرض خاص بمنطقة الظهر",
+        description: "تدليك يدوي أو آلي، حجامة جافة، أحجار بركانية وحجامة دموية — جميع خدمات الظهر بسعر واحد.",
+        waName: "العرض الخاص بمنطقة الظهر",
+        items: [
+            ["تدليك يدوي", "ضمن العرض"],
+            ["تدليك آلي", "ضمن العرض"],
+            ["حجامة جافة", "ضمن العرض"],
+            ["أحجار بركانية", "ضمن العرض"],
+            ["حجامة دموية", "ضمن العرض"],
+            ["السعر الإجمالي بدل 150 درهم", "100 درهم"]
+        ],
+        benefits: []
+    }
+};
 
-    function openServiceModal(key) {
-        const s = SERVICES[key];
-        document.getElementById('modalTitle').textContent = s.title;
-        document.getElementById('modalDescription').textContent = s.description;
-        const list = document.getElementById('modalList');
-        list.innerHTML = '';
-        s.items.forEach(([label, price]) => {
+function openServiceModal(key) {
+    const s = SERVICES[key];
+    document.getElementById('modalTitle').textContent = s.title;
+    document.getElementById('modalDescription').textContent = s.description;
+
+    const list = document.getElementById('modalList');
+    list.innerHTML = '';
+    s.items.forEach(([label, price]) => {
+        const li = document.createElement('li');
+        li.className = 'flex items-center justify-between bg-white rounded-lg px-4 py-3 text-sm';
+        li.innerHTML = `<span class="text-forest-700">${label}</span><span class="font-bold text-forest-800">${price}</span>`;
+        list.appendChild(li);
+    });
+
+    const benefitsSection = document.getElementById('modalBenefitsSection');
+    const benefitsList = document.getElementById('modalBenefits');
+    benefitsList.innerHTML = '';
+    if (s.benefits && s.benefits.length > 0) {
+        benefitsSection.classList.remove('hidden');
+        s.benefits.forEach(b => {
             const li = document.createElement('li');
-            li.className = 'flex items-center justify-between bg-white rounded-lg px-4 py-3 text-sm';
-            li.innerHTML = `<span class="text-forest-700">${label}</span><span class="font-bold text-forest-800">${price}</span>`;
-            list.appendChild(li);
+            li.className = 'flex items-start gap-2 text-sm text-forest-700';
+            li.innerHTML = `<svg class="w-4 h-4 text-forest-500 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg><span>${b}</span>`;
+            benefitsList.appendChild(li);
         });
-        document.getElementById('modalBookBtn').onclick = () => bookService(s.waName);
-        document.getElementById('serviceModal').classList.remove('hidden');
-        document.getElementById('serviceModal').classList.add('flex');
+    } else {
+        benefitsSection.classList.add('hidden');
     }
 
-    function closeServiceModal() {
-        document.getElementById('serviceModal').classList.add('hidden');
-        document.getElementById('serviceModal').classList.remove('flex');
-    }
+    document.getElementById('modalBookBtn').onclick = () => bookService(s.waName);
+    document.getElementById('serviceModal').classList.remove('hidden');
+    document.getElementById('serviceModal').classList.add('flex');
+}
 
-    function bookService(name) {
-        const msg = `مرحبا، أريد حجز موعد لخدمة: ${name}`;
-        const waLink = `https://wa.me/212608635539?text=${encodeURIComponent(msg)}`;
-        window.open(waLink, '_blank');
-    }
+function closeServiceModal() {
+    document.getElementById('serviceModal').classList.add('hidden');
+    document.getElementById('serviceModal').classList.remove('flex');
+}
+
+function bookService(name) {
+    const msg = `مرحبا، أريد حجز موعد لخدمة: ${name}`;
+    const waLink = `https://wa.me/212608635539?text=${encodeURIComponent(msg)}`;
+    window.open(waLink, '_blank');
+}
 </script>
 {% endblock %}
