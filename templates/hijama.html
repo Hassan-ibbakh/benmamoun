@@ -4,14 +4,16 @@
 <main class="max-w-6xl mx-auto px-5 py-10 md:py-14">
 
     <!-- Hero -->
-    <section class="relative text-center mb-8">
-        <div class="relative h-40 md:h-52 flex items-center justify-center mb-6">
-            <div class="absolute w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-forest-300"></div>
-            <div class="absolute w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-clay-300 translate-x-8 -translate-y-4"></div>
+    <section class="service-hero relative overflow-hidden text-center text-cream rounded-[2rem] mb-8 px-6 py-10 md:py-14">
+        <div class="absolute top-8 right-[12%] w-20 h-20 rounded-full border border-white/15" aria-hidden="true"></div>
+        <div class="absolute bottom-8 left-[14%] w-12 h-12 rounded-full border border-clay-300/50" aria-hidden="true"></div>
+        <span class="relative inline-flex items-center gap-2 bg-white/10 text-clay-100 text-xs font-bold px-4 py-1.5 rounded-full mb-5 ring-1 ring-white/15">سنة نبوية وعلاج طبيعي</span>
+        <h2 class="relative text-3xl md:text-5xl font-extrabold text-cream mb-4">مساحة للعناية والتوازن</h2>
+        <p class="relative text-forest-100 max-w-2xl mx-auto leading-8 mb-7">اكتشفوا خدمات الحجامة والعلاجات الطبيعية، واختاروا ما يناسب احتياجاتكم.</p>
+        <div class="relative flex flex-col sm:flex-row justify-center gap-3">
+            <a href="#services" class="inline-flex items-center justify-center bg-cream text-forest-800 hover:bg-white px-6 py-3 rounded-full font-bold transition">استكشفوا الخدمات</a>
+            <a href="https://wa.me/212608635539" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center border border-white/30 text-cream hover:bg-white/10 px-6 py-3 rounded-full font-bold transition">تواصلوا للحجز</a>
         </div>
-        <span class="inline-block bg-clay-50 text-clay-600 text-xs font-bold px-4 py-1.5 rounded-full mb-4">سنة نبوية وعلاج طبيعي</span>
-        <h2 class="text-3xl md:text-4xl font-extrabold text-forest-900 mb-3">خدمات الحجامة والعلاجات الطبيعية</h2>
-        <p class="text-forest-600 max-w-lg mx-auto leading-relaxed">علاجات طبيعية فعّالة لتنشيط الدورة الدموية وتخفيف الآلام، بأعلى معايير النظافة والاحترافية.</p>
     </section>
 
     <!-- Bandeau confiance -->
@@ -21,7 +23,7 @@
     </section>
 
     <!-- Grille des services -->
-    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+    <section id="services" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
 
         <!-- 1 : الحجامة الجافة -->
         <div class="bg-white rounded-2xl shadow-soft overflow-hidden flex flex-col">
@@ -195,8 +197,8 @@
 </main>
 
 <!-- Modal -->
-<div id="serviceModal" class="fixed inset-0 bg-forest-900/50 backdrop-blur-sm hidden items-center justify-center z-50 px-4">
-    <div class="bg-cream rounded-2xl p-6 w-full max-w-md max-h-[85vh] overflow-y-auto shadow-soft">
+<div id="serviceModal" class="fixed inset-0 bg-forest-900/50 backdrop-blur-sm hidden items-center justify-center z-50 px-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-panel bg-cream rounded-2xl p-6 w-full max-w-md max-h-[85vh] overflow-y-auto shadow-soft">
         <div class="flex justify-between items-center mb-3">
             <h3 id="modalTitle" class="text-xl font-extrabold text-forest-800"></h3>
             <button onclick="closeServiceModal()" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-forest-100 text-forest-600 text-xl transition">&times;</button>
