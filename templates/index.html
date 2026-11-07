@@ -13,29 +13,29 @@
 
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-24 lg:py-28 grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div class="relative z-10 text-center md:text-right">
-            <span class="inline-flex items-center gap-2 bg-white/75 text-forest-700 text-xs md:text-sm font-bold px-4 py-2 rounded-full mb-6 ring-1 ring-forest-200/80 shadow-sm">
+            <span class="inline-flex items-center gap-2 bg-white/10 text-clay-100 text-xs md:text-sm font-bold px-4 py-2 rounded-full mb-6 ring-1 ring-white/20 shadow-sm backdrop-blur">
                 <svg class="w-4 h-4 text-clay-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2C9 6 6 9 6 13a6 6 0 0012 0c0-4-3-7-6-11z" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 15c.5 1.2 1.5 2 3 2" stroke-linecap="round"/></svg>
                 عناية مستوحاة من الطبيعة
             </span>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-forest-900 leading-[1.25] mb-5">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-cream leading-[1.25] mb-5">
                 جمالٌ طبيعي<br>
-                <span class="text-forest-600">وعنايةٌ تشبهك</span>
+                <span class="text-clay-300">وعنايةٌ تشبهك</span>
             </h1>
-            <p class="text-forest-700/80 text-base md:text-lg leading-8 mb-8 max-w-xl mx-auto md:mx-0">
+            <p class="text-forest-100 text-base md:text-lg leading-8 mb-8 max-w-xl mx-auto md:mx-0">
                 اكتشفوا منتجات العناية الطبيعية وخدمات الحجامة والعلاجات التقليدية لدى بن المامون.
             </p>
             <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-                <a href="/cosmetiques" class="inline-flex items-center justify-center gap-2 bg-forest-800 hover:bg-forest-900 text-cream font-bold px-7 py-3.5 rounded-full shadow-lg shadow-forest-900/10 transition">
+                <a href="/cosmetiques" class="inline-flex items-center justify-center gap-2 bg-clay-300 hover:bg-clay-200 text-forest-900 font-extrabold px-7 py-3.5 rounded-full shadow-lg shadow-black/20 transition">
                     اكتشفوا المنتجات
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </a>
-                <a href="/hijama" class="inline-flex items-center justify-center gap-2 bg-white/70 hover:bg-white text-forest-800 font-bold px-7 py-3.5 rounded-full border border-forest-300/70 transition">
+                <a href="/hijama" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-cream font-bold px-7 py-3.5 rounded-full border border-white/30 backdrop-blur transition">
                     اكتشفوا خدماتنا
                 </a>
             </div>
-            <div class="mt-8 flex flex-wrap items-center justify-center md:justify-start gap-x-5 gap-y-2 text-sm text-forest-700/75">
-                <span class="inline-flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-clay-500"></span>منتجات للعناية بالبشرة والشعر</span>
-                <span class="inline-flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-clay-500"></span>خدمات الحجامة والعلاجات الطبيعية</span>
+            <div class="mt-8 flex flex-wrap items-center justify-center md:justify-start gap-x-5 gap-y-2 text-sm text-cream/75">
+                <span class="inline-flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-clay-300"></span>منتجات للعناية بالبشرة والشعر</span>
+                <span class="inline-flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-clay-300"></span>خدمات الحجامة والعلاجات الطبيعية</span>
             </div>
         </div>
 
@@ -45,8 +45,9 @@
             <img src="{{ url_for('static', filename='images/hero.png') }}"
                  alt="منتجات بن المامون الطبيعية"
                  width="720" height="540" fetchpriority="high" decoding="async"
-                 class="hero-image relative w-full h-72 sm:h-96 md:h-[27rem] object-cover rounded-[1.75rem] ring-1 ring-black/5">
-            <div class="absolute -bottom-5 right-4 md:right-8 flex items-center gap-3 rounded-2xl bg-cream/95 px-4 py-3 shadow-xl ring-1 ring-forest-900/5 backdrop-blur">
+                 class="hero-image relative z-10 w-full h-72 sm:h-96 md:h-[27rem] object-cover rounded-[1.75rem] ring-1 ring-white/20">
+            <div class="hero-product-orb" aria-hidden="true"><span></span></div>
+            <div class="absolute -bottom-5 right-4 md:right-8 z-20 flex items-center gap-3 rounded-2xl bg-cream/95 px-4 py-3 shadow-xl ring-1 ring-forest-900/5 backdrop-blur">
                 <span class="flex w-10 h-10 items-center justify-center rounded-full bg-forest-100 text-forest-700">
                     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v18M5 8c0-2 2-3 7-3s7 1 7 3-2 3-7 3-7 1-7 3 2 3 7 3 7-1 7-3" stroke-linecap="round"/></svg>
                 </span>
