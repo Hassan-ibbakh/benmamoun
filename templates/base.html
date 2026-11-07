@@ -33,16 +33,116 @@
             --page-clay: #b27b3f;
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+            background: var(--page-cream);
+        }
         body {
             font-family: 'Tajawal', sans-serif;
-            background-image: radial-gradient(ellipse at 4% 12%, rgba(224, 181, 131, .09), transparent 28rem);
+            isolation: isolate;
+            overflow-x: hidden;
+        }
+        body.bg-cream {
+            background-color: transparent;
+            background-image: none;
         }
         ::selection { background: #c2d6c7; color: var(--page-forest); }
         :focus-visible { outline: 3px solid #cb9455; outline-offset: 3px; }
         .cup-motif { background: radial-gradient(circle at 30% 30%, rgba(63,122,92,0.12), transparent 60%); }
 
+        .ambient-scene {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+            perspective: 1000px;
+            contain: paint;
+        }
+        .ambient-scene__orb {
+            position: absolute;
+            width: clamp(16rem, 34vw, 32rem);
+            aspect-ratio: 1;
+            border: 1px solid rgba(255, 255, 255, .76);
+            border-radius: 50%;
+            box-shadow: inset -18px -24px 55px rgba(35, 72, 55, .08), 0 30px 90px rgba(35, 72, 55, .06);
+            transform-style: preserve-3d;
+        }
+        .ambient-scene__orb--sage {
+            top: 16%;
+            right: -15rem;
+            background:
+                radial-gradient(ellipse at 32% 28%, rgba(255, 255, 255, .88), transparent 25%),
+                radial-gradient(ellipse at 35% 33%, rgba(194, 214, 199, .72), rgba(147, 182, 156, .18) 55%, rgba(63, 122, 92, .06) 72%, transparent 73%);
+            animation: ambient-float-a 19s ease-in-out infinite;
+        }
+        .ambient-scene__orb--clay {
+            bottom: -19rem;
+            left: -13rem;
+            width: clamp(18rem, 38vw, 36rem);
+            background:
+                radial-gradient(ellipse at 34% 26%, rgba(255, 255, 255, .9), transparent 24%),
+                radial-gradient(ellipse at 38% 36%, rgba(235, 208, 172, .65), rgba(224, 181, 131, .16) 56%, rgba(178, 123, 63, .055) 72%, transparent 73%);
+            animation: ambient-float-b 23s ease-in-out infinite;
+        }
+        .ambient-scene__ring {
+            position: absolute;
+            top: 45%;
+            right: -7rem;
+            width: clamp(20rem, 39vw, 38rem);
+            aspect-ratio: 1;
+            border: 1px solid rgba(63, 122, 92, .17);
+            border-radius: 50%;
+            transform-style: preserve-3d;
+            transform: rotateX(67deg) rotateZ(-28deg);
+            animation: ambient-ring-spin 36s linear infinite;
+        }
+        .ambient-scene__ring::before,
+        .ambient-scene__ring::after {
+            position: absolute;
+            inset: 12%;
+            border: 1px solid rgba(178, 123, 63, .18);
+            border-radius: 50%;
+            content: "";
+            transform: rotateY(44deg);
+        }
+        .ambient-scene__ring::after {
+            inset: 24%;
+            border-color: rgba(63, 122, 92, .14);
+            transform: rotateY(-52deg);
+        }
+        .ambient-scene__satellite {
+            position: absolute;
+            top: 8%;
+            left: 16%;
+            width: 1.15rem;
+            aspect-ratio: 1;
+            border: 1px solid rgba(255, 255, 255, .9);
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 25%, #fff, #e0b583 58%, #b27b3f);
+            box-shadow: 0 0 28px rgba(178, 123, 63, .3);
+        }
+        @keyframes ambient-float-a {
+            0%, 100% { transform: translate3d(0, 0, -30px) rotateY(-18deg); }
+            50% { transform: translate3d(-18px, 30px, 25px) rotateY(12deg); }
+        }
+        @keyframes ambient-float-b {
+            0%, 100% { transform: translate3d(0, 0, -10px) rotateX(12deg); }
+            50% { transform: translate3d(24px, -20px, 35px) rotateX(-10deg); }
+        }
+        @keyframes ambient-ring-spin {
+            from { transform: rotateX(67deg) rotateZ(-28deg); }
+            to { transform: rotateX(67deg) rotateZ(332deg); }
+        }
+        body > .ambient-scene ~ main,
+        body > .ambient-scene ~ section,
+        body > .ambient-scene ~ footer,
+        body > .ambient-scene ~ .social-bar { position: relative; z-index: 1; }
+
         .site-header {
+            position: sticky;
+            z-index: 40;
+            top: 0;
             box-shadow: 0 10px 32px -28px rgba(20, 43, 32, .55);
             transition: box-shadow .25s ease, background-color .25s ease;
         }
@@ -66,7 +166,77 @@
             isolation: isolate;
             background:
                 radial-gradient(ellipse at 4% 95%, rgba(178, 123, 63, .17), transparent 35%),
-                linear-gradient(125deg, #f8f2e7 0%, #f2eadc 52%, #e8eee8 100%);
+                linear-gradient(125deg, rgba(248, 242, 231, .88) 0%, rgba(242, 234, 220, .82) 52%, rgba(232, 238, 232, .88) 100%);
+        }
+        .hero-scene {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+            perspective: 900px;
+        }
+        .hero-scene__orb {
+            position: absolute;
+            top: 40%;
+            left: 43%;
+            width: clamp(10rem, 19vw, 18rem);
+            aspect-ratio: 1;
+            border: 1px solid rgba(255, 255, 255, .8);
+            border-radius: 50%;
+            background:
+                radial-gradient(ellipse at 30% 24%, rgba(255, 255, 255, .9), transparent 22%),
+                radial-gradient(ellipse at 38% 34%, rgba(194, 214, 199, .88), rgba(94, 146, 112, .28) 53%, rgba(35, 72, 55, .1) 72%, transparent 73%);
+            box-shadow: inset -16px -22px 40px rgba(35, 72, 55, .16), 0 30px 70px rgba(35, 72, 55, .13);
+            opacity: .8;
+            transform-style: preserve-3d;
+            animation: hero-orb-float 11s ease-in-out infinite;
+        }
+        .hero-scene__ring {
+            position: absolute;
+            top: 30%;
+            left: 39%;
+            width: clamp(15rem, 28vw, 27rem);
+            aspect-ratio: 1;
+            border: 1px solid rgba(178, 123, 63, .42);
+            border-radius: 50%;
+            opacity: .85;
+            transform: rotateX(68deg) rotateZ(28deg);
+            transform-style: preserve-3d;
+            animation: hero-ring-turn 28s linear infinite;
+        }
+        .hero-scene__ring::before,
+        .hero-scene__ring::after {
+            position: absolute;
+            inset: 12%;
+            border: 1px solid rgba(63, 122, 92, .3);
+            border-radius: 50%;
+            content: "";
+            transform: rotateY(58deg);
+        }
+        .hero-scene__ring::after {
+            inset: 23%;
+            border-color: rgba(178, 123, 63, .32);
+            transform: rotateY(-48deg);
+        }
+        .hero-scene__pearl {
+            position: absolute;
+            top: 17%;
+            left: 18%;
+            width: 1rem;
+            aspect-ratio: 1;
+            border: 1px solid rgba(255, 255, 255, .9);
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 25%, #fff, #e0b583 60%, #b27b3f);
+            box-shadow: 0 0 28px rgba(178, 123, 63, .4);
+        }
+        @keyframes hero-orb-float {
+            0%, 100% { transform: translate3d(0, 0, -20px) rotateY(-16deg); }
+            50% { transform: translate3d(12px, -22px, 34px) rotateY(18deg); }
+        }
+        @keyframes hero-ring-turn {
+            from { transform: rotateX(68deg) rotateZ(28deg); }
+            to { transform: rotateX(68deg) rotateZ(388deg); }
         }
         .hero-section::before {
             position: absolute;
@@ -182,6 +352,11 @@
         @media (max-width: 767px) {
             .hero-image { transform: none; }
             .hero-section::before { mask-image: linear-gradient(180deg, transparent, #000); }
+            .hero-scene__orb { top: 62%; left: 38%; width: 10rem; opacity: .5; }
+            .hero-scene__ring { top: 46%; left: 34%; width: 15rem; opacity: .6; }
+            .ambient-scene__orb--sage { right: -13rem; }
+            .ambient-scene__orb--clay { left: -14rem; }
+            .ambient-scene__ring { right: -15rem; }
         }
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
@@ -197,8 +372,14 @@
 </head>
 <body class="bg-cream text-forest-900 antialiased">
 
+    <div class="ambient-scene" aria-hidden="true">
+        <div class="ambient-scene__orb ambient-scene__orb--sage"></div>
+        <div class="ambient-scene__orb ambient-scene__orb--clay"></div>
+        <div class="ambient-scene__ring"><span class="ambient-scene__satellite"></span></div>
+    </div>
+
     <!-- Barre réseaux sociaux -->
-    <div class="bg-forest-800">
+    <div class="social-bar relative z-10 bg-forest-800">
         <div class="max-w-6xl mx-auto px-5 py-2 flex items-center justify-center gap-3">
             <a href="https://www.facebook.com/share/197ofe1g5Q/" target="_blank" rel="noopener" aria-label="فيسبوك"
                class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition">
@@ -341,6 +522,22 @@
                 setMobileMenuOpen(false);
                 menuBtn.focus();
             }
+            if (event.key === 'Escape') {
+                const openDialog = document.querySelector('[role="dialog"]:not(.hidden)');
+                if (openDialog) {
+                    if (openDialog.id === 'orderModal') closeOrderModal();
+                    if (openDialog.id === 'productModal') closeProductModal();
+                    if (openDialog.id === 'serviceModal') closeServiceModal();
+                }
+            }
+        });
+        document.querySelectorAll('[role="dialog"]').forEach((dialog) => {
+            dialog.addEventListener('click', (event) => {
+                if (event.target !== dialog) return;
+                if (dialog.id === 'orderModal') closeOrderModal();
+                if (dialog.id === 'productModal') closeProductModal();
+                if (dialog.id === 'serviceModal') closeServiceModal();
+            });
         });
 
         const revealItems = document.querySelectorAll(
