@@ -3,16 +3,14 @@
 {% block content %}
 
 <!-- Hero -->
-<section class="hero-section relative overflow-hidden">
+<section class="hero-section relative overflow-hidden"
+         style="--hero-image: url('{{ url_for('static', filename='images/hero.png') }}')">
     <div class="hero-scene" aria-hidden="true">
         <div class="hero-scene__ring"><span class="hero-scene__pearl"></span></div>
         <div class="hero-scene__orb"></div>
     </div>
-    <div class="absolute -top-24 -left-20 w-72 h-72 rounded-full bg-forest-200/30 blur-3xl" aria-hidden="true"></div>
-    <div class="absolute -bottom-28 right-1/4 w-80 h-80 rounded-full bg-clay-200/35 blur-3xl" aria-hidden="true"></div>
-
-    <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-24 lg:py-28 grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <div class="relative z-10 text-center md:text-right">
+    <div class="relative z-10 max-w-7xl mx-auto w-full px-6 py-16 md:py-24 lg:py-28 flex items-center">
+        <div class="relative z-10 w-full max-w-2xl text-center md:text-right">
             <span class="inline-flex items-center gap-2 bg-white/10 text-clay-100 text-xs md:text-sm font-bold px-4 py-2 rounded-full mb-6 ring-1 ring-white/20 shadow-sm backdrop-blur">
                 <svg class="w-4 h-4 text-clay-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2C9 6 6 9 6 13a6 6 0 0012 0c0-4-3-7-6-11z" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 15c.5 1.2 1.5 2 3 2" stroke-linecap="round"/></svg>
                 عناية مستوحاة من الطبيعة
@@ -39,21 +37,7 @@
             </div>
         </div>
 
-        <div class="hero-image-wrap relative max-w-xl mx-auto w-full">
-            <div class="absolute -inset-3 md:-inset-5 rounded-[2rem] border border-white/70 rotate-2" aria-hidden="true"></div>
-            <div class="absolute -top-5 -right-4 md:-top-7 md:-right-6 w-20 h-20 md:w-28 md:h-28 rounded-full border border-clay-400/60 hero-orbit" aria-hidden="true"></div>
-            <img src="{{ url_for('static', filename='images/hero.png') }}"
-                 alt="منتجات بن المامون الطبيعية"
-                 width="720" height="540" fetchpriority="high" decoding="async"
-                 class="hero-image relative z-10 w-full h-72 sm:h-96 md:h-[27rem] object-cover rounded-[1.75rem] ring-1 ring-white/20">
-            <div class="hero-product-orb" aria-hidden="true"><span></span></div>
-            <div class="absolute -bottom-5 right-4 md:right-8 z-20 flex items-center gap-3 rounded-2xl bg-cream/95 px-4 py-3 shadow-xl ring-1 ring-forest-900/5 backdrop-blur">
-                <span class="flex w-10 h-10 items-center justify-center rounded-full bg-forest-100 text-forest-700">
-                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v18M5 8c0-2 2-3 7-3s7 1 7 3-2 3-7 3-7 1-7 3 2 3 7 3 7-1 7-3" stroke-linecap="round"/></svg>
-                </span>
-                <span class="text-sm font-bold text-forest-800">بن المامون<br><span class="text-xs font-medium text-forest-600">جمال وعافية بطابع طبيعي</span></span>
-            </div>
-        </div>
+        <div class="hero-product-orb" aria-hidden="true"><span></span></div>
     </div>
 </section>
 
